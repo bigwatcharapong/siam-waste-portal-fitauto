@@ -22,12 +22,11 @@ export default function AuthGuard({ children }: { children: React.ReactNode }) {
 
   return (
     <>
-      {/* render children เสมอ เพื่อไม่ให้ useForm disconnect */}
-      <div style={{ display: user ? 'contents' : 'none' }}>
+      <div style={{ visibility: user ? 'visible' : 'hidden', height: user ? 'auto' : 0, overflow: 'hidden' }}>
         {children}
       </div>
       {!user && (
-        <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', minHeight: '100vh' }}>
+        <div style={{ position: 'fixed', inset: 0, display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
           <Spin size="large" />
         </div>
       )}

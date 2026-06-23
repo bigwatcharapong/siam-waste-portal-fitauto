@@ -65,14 +65,6 @@ export default function RequestPage() {
     check()
   }, [])
 
-  useEffect(() => {
-    if (user) {
-      form.setFieldsValue({
-        contact_name: user.contact_name,
-        contact_tel:  user.contact_tel,
-      })
-    }
-  }, [user, form])
 
   async function onFinish(values: { contact_name: string; contact_tel: string; remark?: string }) {
     setError('')
@@ -171,7 +163,8 @@ export default function RequestPage() {
             </div>
             <Divider style={{ margin: '8px 0 16px' }} />
 
-            <Form form={form} layout="vertical" onFinish={onFinish} requiredMark={false}>
+            <Form form={form} layout="vertical" onFinish={onFinish} requiredMark={false}
+              initialValues={{ contact_name: user?.contact_name ?? '', contact_tel: user?.contact_tel ?? '' }}>
               <Row gutter={16}>
                 <Col xs={24} sm={12}>
                   <Form.Item
