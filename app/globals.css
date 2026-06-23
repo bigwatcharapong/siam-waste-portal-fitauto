@@ -1,0 +1,40 @@
+@import url('https://fonts.googleapis.com/css2?family=Kanit:wght@300;400;500;600&display=swap');
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Kanit', sans-serif;
+  background: #f4f6f8;
+  min-height: 100vh;
+}
+
+/* ทำให้ Ant Design ใช้ font Kanit */
+.ant-btn,
+.ant-input,
+.ant-form-item-label,
+.ant-typography,
+.ant-alert-message,
+.ant-card {
+  font-family: 'Kanit', sans-serif !important;
+}
+
+/* Table */
+.ant-table-thead > tr > th {
+  background: #fafafa !important;
+  font-weight: 600 !important;
+  font-size: 13px !important;
+  color: #555 !important;
+}
+.ant-table-tbody > tr:hover > td {
+  background: #f7fbf7 !important;
+}
+
+/* Scrollbar */
+::-webkit-scrollbar { width: 5px; height: 5px; }
+::-webkit-scrollbar-track { background: transparent; }
+::-webkit-scrollbar-thumb { background: #ccc; border-radius: 4px; }
+::-webkit-scrollbar-thumb:hover { background: #aaa; }
