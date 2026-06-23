@@ -50,7 +50,7 @@ export default function LoginPage() {
     setLoading(true)
     setAlertMsg(null)
     try {
-      const res  = await api.post('/api/auth/login', { email, password: values.password, turnstileToken })
+      const res  = await api.post('/api/auth/login', { email, password: values.password })
       const data = res.data
       if (data.status === 'success') {
         login(data.token)
